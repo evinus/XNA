@@ -58,6 +58,8 @@ namespace WindowsGame1
                 {
                     // update the button state.
                     state = ButtonStatus.MouseOver;
+                    if (Clicked != null)
+                        Clicked(this, EventArgs.Empty);
                 }
 
                 else if (state == ButtonStatus.Pressed)

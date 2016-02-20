@@ -26,6 +26,12 @@ namespace WindowsGame1
             get { return lives; }
         }
         private Drawing level;
+        private string newTowerType;
+
+        public string NewTowerType
+        {
+            set { newTowerType = value; }
+        }
 
         public Player(Drawing level, Texture2D towerTexture, Texture2D bulletTexture)
         {
@@ -39,6 +45,31 @@ namespace WindowsGame1
         private int tileX;
         private int tileY;
 
+        public void AddTower()
+        {
+            Tower towerToAdd = null;
+
+            switch (newTowerType)
+            {
+                case "Arrow Tower":
+                    {
+                        towerToAdd = new ArrowTower(towerTexture,
+                            bulletTexture, new Vector2(tileX, tileY));
+                        break;
+                    }
+            }
+
+            // Only add the tower if there is a space and if the player can afford it.
+            if (IsCellClear() == true && towerToAdd.Cost <= money)
+            {
+                towers.Add(towerToAdd);
+                money -= towerToAdd.Cost;
+
+                // Reset the newTowerType field.
+                newTowerType = string.Empty;
+            }
+        }
+
         public void Update(GameTime gameTime, List<Enemy> enemies)
         {
             mouseState = Mouse.GetState();
@@ -46,23 +77,20 @@ namespace WindowsGame1
             cellY = (int)(mouseState.Y / 32); // from array space to level space
             tileX = cellX * 32; // Convert from array space to level space
             tileY = cellY * 32; // Convert from array space to level space
-            if (mouseState.LeftButton == ButtonState.Released
-               && oldState.LeftButton == ButtonState.Pressed)
+            if (mouseState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
             {
-                if (IsCellClear())
+                if (string.IsNullOrEmpty(newTowerType) == false)
                 {
-                    ArrowTower tower = new ArrowTower(towerTexture,bulletTexture, new Vector2(tileX, tileY));
-                    towers.Add(tower);
+                    AddTower();
                 }
             }
-            if (mouseState.LeftButton == ButtonState.Released
-             && oldState.LeftButton == ButtonState.Pressed)
+            if (mouseState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
             {
                 if (IsCellClear())
                 {
-                    ArrowTower tower = new ArrowTower(towerTexture,bulletTexture, new Vector2(tileX, tileY));
-                    towers.Add(tower);
-                }
+                    //ArrowTower tower = new ArrowTower(towerTexture,bulletTexture, new Vector2(tileX, tileY));
+                    //towers.Add(tower);
+               }
 
             }
             foreach (Tower tower in towers)
@@ -90,6 +118,7 @@ namespace WindowsGame1
             bool onPath = (level.GetIndex(cellX, cellY) != 1);
            return inBounds && spaceClear && onPath; // If both checks are true return true
         }
+     
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (Tower tower in towers)

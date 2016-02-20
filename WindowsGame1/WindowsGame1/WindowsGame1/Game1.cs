@@ -28,6 +28,7 @@ namespace WindowsGame1
         WaveManager waveManager;
         Toolbar toolbar;
         Button arrowButton;
+        
 
         public Game1()
         {
@@ -81,6 +82,13 @@ namespace WindowsGame1
             Texture2D towerHower = Content.Load<Texture2D>("GUI\\towerhower");
             Texture2D arrowPressad = Content.Load<Texture2D>("GUI\\towerpressed");
             arrowButton = new Button(towerTexture, towerHower, arrowPressad, new Vector2(0, drawing.Height * 32));
+            arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
+            
+
+        }
+        private void arrowButton_Clicked(object sender, EventArgs e)
+        {
+            player.NewTowerType = "Arrow Tower";
         }
 
         /// <summary>

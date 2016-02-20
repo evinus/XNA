@@ -5,6 +5,6 @@ Content\ring.xnb
 Content\tower1.xnb
 Content\bullet.xnb
 Content\toolbarbit.xnb
-Content\Arial.xnb
 Content\GUI\towerhower.xnb
 Content\GUI\towerpressed.xnb
+Content\Arial.xnb
