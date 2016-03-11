@@ -26,7 +26,6 @@ namespace WindowsGame1
         {
             get { return !alive; }
         }
-
         public int BountyGiven
         {
             get { return bountyGiven; }

@@ -44,8 +44,8 @@ namespace WindowsGame1
               {0,0,1,0,0,0,0,0,},
                {0,0,1,1,0,0,0,0,},
                 {0,0,0,1,1,0,0,0,},
-    {0,0,0,0,1,0,0,0,},
-    {0,0,0,1,1,0,0,0,},
+              {0,0,0,0,1,0,0,0,},
+            {0,0,0,1,1,0,0,0,},
    {0,0,1,1,0,0,0,0,},
     {0,0,1,0,0,0,0,0,},
     {0,0,1,1,1,1,1,1,},
@@ -70,8 +70,7 @@ namespace WindowsGame1
                     if (textureIndex == -1)
                         continue;
                     Texture2D texture = tileTextures[textureIndex];
-                    batch.Draw(texture, new Rectangle(
-                        x * 32, y * 32, 32, 32), Color.White);
+                    batch.Draw(texture, new Rectangle(x * 32, y * 32, 32, 32), Color.White);
                 }
             }
         }

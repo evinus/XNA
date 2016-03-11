@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{E7B1CB8D-1F28-41E3-9CAA-F9DB63907279}</ProjectGuid>
+    <ProjectGuid>{ACD015A1-33D8-4FD0-BA64-A4794C2821EE}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsGame1</RootNamespace>
-    <AssemblyName>WindowsGame1</AssemblyName>
+    <RootNamespace>TowerDefense</RootNamespace>
+    <AssemblyName>TowerDefense</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
     <XnaProfile>Reach</XnaProfile>
-    <XnaCrossPlatformGroupID>9a842cba-b548-42b6-9c09-67a8f24f41d3</XnaCrossPlatformGroupID>
+    <XnaCrossPlatformGroupID>b5d654e3-a646-48c3-b574-cd37d3f191ea</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
@@ -72,21 +72,18 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrowTower.cs" />
-    <Compile Include="Bullet.cs" />
-    <Compile Include="Drawing.cs" />
-    <Compile Include="Enemy.cs" />
-    <Compile Include="GUI\Button.cs" />
-    <Compile Include="GUI\Toolbar.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Bild.cs" />
+    <Compile Include="Fiende.cs" />
+    <Compile Include="Kula.cs" />
+    <Compile Include="Nivå.cs" />
+    <Compile Include="PilTorn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="SpikeTower.cs" />
-    <Compile Include="Sprite.cs" />
-    <Compile Include="Tower.cs" />
-    <Compile Include="WaveManager.cs" />
-    <Compile Include="Waves.cs" />
+    <Compile Include="Spelare.cs" />
+    <Compile Include="Torn.cs" />
+    <Compile Include="Våg.cs" />
+    <Compile Include="VågMästare.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -95,8 +92,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsGame1Content\WindowsGame1Content.contentproj">
-      <Name>WindowsGame1Content</Name>
+    <ProjectReference Include="..\TowerDefenseContent\TowerDefenseContent.contentproj">
+      <Name>TowerDefenseContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

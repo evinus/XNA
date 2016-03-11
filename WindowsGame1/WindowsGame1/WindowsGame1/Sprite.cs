@@ -19,7 +19,6 @@ namespace WindowsGame1
         public Vector2 Center
 
         {
-
             get { return center; }
         }
         public Vector2 Position
