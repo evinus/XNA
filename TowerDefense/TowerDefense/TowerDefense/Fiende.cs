@@ -33,7 +33,7 @@ namespace TowerDefense
         {
             get { return Vector2.Distance(position, vägvisare.Peek()); }
         }
-        public Fiende(Texture2D textur, Vector2 position, float hälsa,float fart,int belöning) : base (textur,position)
+        public Fiende(Texture2D textur, Vector2 position, float hälsa,float fart,int belöning) : base (textur,textur, position)
         {
             this.hälsa = hälsa;
             this.fart = fart;

@@ -21,7 +21,7 @@ namespace TowerDefense
         {
             return ålder > 100;
         }
-        public Kula(Texture2D textur,Vector2 position,float rotation,int fart,int skada): base(textur,position)
+        public Kula(Texture2D textur,Vector2 position,float rotation,int fart,int skada): base(textur,textur,position)
         {
             this.rotation = rotation;
             this.skada = skada;

@@ -15,8 +15,9 @@ namespace TowerDefense
         private MouseState musStatus;
         private int musX;
         private int musY;
+        private Texture2D textur2;
 
-        public PilTorn(Texture2D textur,Texture2D kultextur, Vector2 position):base(textur,kultextur,position)
+        public PilTorn(Texture2D textur,Texture2D textur2, Texture2D kultextur, Vector2 position):base(textur,textur2, kultextur,position)
         {
             this.skada = 15;
             this.kostnad = 15;
@@ -40,6 +41,8 @@ namespace TowerDefense
                             spelare.Pengar -= 20;
                             spelare.tornen[i].Skada = 30;
                             spelare.tornen[i].Radie = 100;
+                            spelare.tornen[i].Textur2();
+                            
                             return true;
                         }    
                     }
@@ -75,6 +78,10 @@ namespace TowerDefense
                     kulLista.Remove(kula);
                     i--;
                 }
+            }
+            if(uppgradering())
+            {
+
             }
         }
     }

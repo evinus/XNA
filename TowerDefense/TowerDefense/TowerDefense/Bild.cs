@@ -9,6 +9,7 @@ namespace TowerDefense
     class Bild
     {
         protected Texture2D textur;
+        protected Texture2D textur2;
         protected Vector2 position;
         protected Vector2 centrum;
         protected Vector2 hastighet;
@@ -29,9 +30,14 @@ namespace TowerDefense
         {
             get { return new Rectangle((int)Position.X, (int)Position.Y, textur.Width, textur.Height); }
         }
-        public Bild(Texture2D tex, Vector2 pos)
+        public void Textur2()
+        {
+             textur2 = textur; 
+        }
+        public Bild(Texture2D tex, Texture2D tex2, Vector2 pos)
         {
             textur = tex;
+            textur2 = tex2;
             position = pos;
             hastighet = Vector2.Zero;
             centrum = new Vector2(position.X + textur.Width / 2, position.X + textur.Height / 2);

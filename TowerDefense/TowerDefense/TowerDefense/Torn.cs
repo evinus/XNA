@@ -35,7 +35,7 @@ namespace TowerDefense
         {
             get { return mål; }
         }
-        public Torn (Texture2D textur,Texture2D kultextur,Vector2 position): base (textur,position)
+        public Torn (Texture2D textur,Texture2D textur2, Texture2D kultextur,Vector2 position): base (textur,textur2, position)
         {
             this.kulTextur = kultextur;
         }

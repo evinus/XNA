@@ -16,6 +16,7 @@ namespace TowerDefense
         private MouseState musStatus;
         private MouseState gamalStatus;
         private Texture2D tornTextur;
+        private Texture2D tornTextur2;
         private Texture2D kulTextur;
 
         public int Pengar
@@ -34,10 +35,11 @@ namespace TowerDefense
         {
             set { nyTornTyp = value; }
         }
-        public Spelare(Nivå nivo,Texture2D tornTextur,Texture2D kulTextur)
+        public Spelare(Nivå nivo,Texture2D tornTextur, Texture2D tornTextur2, Texture2D kulTextur)
         {
             this.nivå = nivo;
             this.tornTextur = tornTextur;
+            this.tornTextur2 = tornTextur2;
             this.kulTextur = kulTextur;
         }
         private int CellX;
@@ -53,7 +55,7 @@ namespace TowerDefense
             {
                 case "Pil Torn":
                     {
-                        tornAttLäggaTill = new PilTorn(tornTextur, kulTextur, new Vector2(bitX, bitY));
+                        tornAttLäggaTill = new PilTorn(tornTextur,tornTextur2, kulTextur, new Vector2(bitX, bitY));
                         break;
                     }
             }
