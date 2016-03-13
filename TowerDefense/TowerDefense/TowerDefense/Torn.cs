@@ -23,10 +23,12 @@ namespace TowerDefense
         public int Skada
         {
             get { return skada;}
+            set { skada = value; }
         }
         public float Radie
         {
             get { return radie; }
+            set { radie = value; }
         }
         protected Fiende mål;
         public Fiende Mål

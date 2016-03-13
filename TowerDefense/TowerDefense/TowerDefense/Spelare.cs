@@ -12,7 +12,7 @@ namespace TowerDefense
     {
         private int pengar = 50;
         private int liv = 30;
-        private List<Torn> tornen = new List<Torn>();
+        public List<Torn> tornen = new List<Torn>();
         private MouseState musStatus;
         private MouseState gamalStatus;
         private Texture2D tornTextur;
@@ -21,10 +21,12 @@ namespace TowerDefense
         public int Pengar
         {
             get { return pengar; }
+            set { pengar = value; }
         }
         public int Liv
         {
             get { return liv; }
+            set { pengar = value; }
         }
         private Nivå nivå;
         private string nyTornTyp;
@@ -90,8 +92,23 @@ namespace TowerDefense
         }
         private bool ÄrCellTom()
         {
-            bool inomDistans = CellX >= 0 && CellY < nivå.Höjd;
-
+            bool inomDistans = CellX >= 0 && CellY >= 0 && CellX < nivå.Bredd && CellY < nivå.Höjd;
+            bool ytaTom = true;
+            foreach(Torn torn in tornen)
+            {
+                ytaTom = (torn.Position != new Vector2(bitX, bitY));
+                if (!ytaTom)
+                    break;
+            }
+            bool rättVäg = (nivå.FåIndex(CellX, CellY) != 1);
+            return inomDistans && ytaTom && rättVäg;
+        }
+        public void Draw(SpriteBatch spritebatch)
+        {
+            foreach(Torn torn in tornen)
+            {
+                torn.Draw(spritebatch);
+            }
         }
     }
 }

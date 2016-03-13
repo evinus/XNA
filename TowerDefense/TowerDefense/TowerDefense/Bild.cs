@@ -14,6 +14,7 @@ namespace TowerDefense
         protected Vector2 hastighet;
         protected Vector2 början;
         protected float rotation;
+        protected Rectangle area;
 
         public Vector2 Center
         {
@@ -23,6 +24,10 @@ namespace TowerDefense
         public Vector2 Position
         {
             get { return position; }
+        }
+        public Rectangle Area
+        {
+            get { return new Rectangle((int)Position.X, (int)Position.Y, textur.Width, textur.Height); }
         }
         public Bild(Texture2D tex, Vector2 pos)
         {

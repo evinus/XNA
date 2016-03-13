@@ -28,7 +28,7 @@ namespace TowerDefense
         {
             get { return NuvarandeVåg.Rondnummer + 1; }
         }
-        public VågMästare(Nivå nivå,int nummerAvVågor,Texture2D fiendeTextur)
+        public VågMästare(Spelare spelare, Nivå nivå,int nummerAvVågor,Texture2D fiendeTextur)
         {
             this.nummerAvVågor = nummerAvVågor;
             this.fiendeTextur = fiendeTextur;
@@ -37,7 +37,7 @@ namespace TowerDefense
             {
                 int startNummerAvFiender = 6;
                 int nummerModifieare = (i / 6) + 1;
-                Våg våg = new Våg(i, startNummerAvFiender * nummerModifieare, nivå, fiendeTextur);
+                Våg våg = new Våg(i, startNummerAvFiender * nummerModifieare,spelare, nivå, fiendeTextur);
                 vågor.Enqueue(våg);
             }
             StartaNästaVåg();

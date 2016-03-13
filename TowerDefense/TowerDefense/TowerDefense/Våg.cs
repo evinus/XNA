@@ -18,6 +18,7 @@ namespace TowerDefense
         private Nivå nivå;
         private Texture2D fiendetextur;
         private List<Fiende> fiender = new List<Fiende>();
+        Spelare spelare;
 
         public bool Rondöver
         {
@@ -36,12 +37,13 @@ namespace TowerDefense
         {
             get { return fiender; }
         }
-        public Våg(int vågnummer, int nummeravfiender,Nivå nivå, Texture2D fiendetextur)
+        public Våg(int vågnummer, int nummeravfiender,Spelare spelare, Nivå nivå, Texture2D fiendetextur)
         {
             this.vågNummer = vågnummer;
             this.nummerAvFiender = nummeravfiender;
             this.nivå = nivå;
             this.fiendetextur = fiendetextur;
+            this.spelare = spelare;
         }
         public void LäggTillFiende()
         {
@@ -74,6 +76,11 @@ namespace TowerDefense
                     if(fiende.Hälsa > 0)
                     {
                         FiendeVidSlut = true;
+                        spelare.Liv -= 1;
+                    }
+                    else
+                    {
+                        spelare.Pengar += fiende.Belöning;
                     }
                     fiender.Remove(fiende);
                     i--;
