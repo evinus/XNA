@@ -42,7 +42,6 @@ namespace TowerDefense
                             spelare.tornen[i].Skada = 30;
                             spelare.tornen[i].Radie = 100;
                             spelare.tornen[i].Textur2();
-                            
                             return true;
                         }    
                     }
@@ -79,10 +78,7 @@ namespace TowerDefense
                     i--;
                 }
             }
-            if(uppgradering())
-            {
-
-            }
+            uppgradering();
         }
     }
 }

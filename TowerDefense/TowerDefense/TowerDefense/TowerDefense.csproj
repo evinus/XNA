@@ -75,6 +75,7 @@
     <Compile Include="Bild.cs" />
     <Compile Include="Fiende.cs" />
     <Compile Include="Kula.cs" />
+    <Compile Include="KulTorn.cs" />
     <Compile Include="Nivå.cs" />
     <Compile Include="PilTorn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
