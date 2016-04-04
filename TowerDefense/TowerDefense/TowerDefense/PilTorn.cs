@@ -17,14 +17,14 @@ namespace TowerDefense
         private int musY;
         private Texture2D textur2;
 
-        public PilTorn(Texture2D textur,Texture2D textur2, Texture2D kultextur, Vector2 position):base(textur,textur2, kultextur,position)
+        public PilTorn(Texture2D textur,Texture2D textur2, Texture2D textur3, Texture2D kultextur, Vector2 position):base(textur,textur2, textur3, kultextur,position)
         {
             this.skada = 15;
             this.kostnad = 15;
-            this.radie = 80;
+            this.radie = 200;
             
         }
-        public bool uppgradering()
+        public bool Uppgradering1()
         {
             föreGåendeMus = Mouse.GetState();
             musStatus = Mouse.GetState();
@@ -78,7 +78,7 @@ namespace TowerDefense
                     i--;
                 }
             }
-            uppgradering();
+            //Uppgradering1();
         }
     }
 }

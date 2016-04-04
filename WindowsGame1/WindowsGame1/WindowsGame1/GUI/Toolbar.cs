@@ -28,7 +28,7 @@ namespace WindowsGame1
         public void Draw(SpriteBatch spriteBatch, Player player)
         {
             spriteBatch.Draw(texture, position, Color.White);
-            string text = string.Format("Gold : {0} Lives : {1}", player.Money, player.Lives);
+            string text = string.Format("Gold : {0} Lives: {1}", player.Money, player.Lives);
             spriteBatch.DrawString(font, text, textPosition, Color.White);
         }
 

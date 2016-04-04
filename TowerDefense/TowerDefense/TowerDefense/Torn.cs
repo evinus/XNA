@@ -14,6 +14,8 @@ namespace TowerDefense
         protected float radie;
         protected Texture2D kulTextur;
         protected float kulKlocka;
+        protected Texture2D textur2;
+        protected Texture2D textur3;
         protected List<Kula> kulLista = new List<Kula>();
 
         public int Kostnad
@@ -35,9 +37,15 @@ namespace TowerDefense
         {
             get { return mål; }
         }
-        public Torn (Texture2D textur,Texture2D textur2, Texture2D kultextur,Vector2 position): base (textur,textur2, position)
+        public void Textur2()
+        {
+            textur2 = textur;
+        }
+        public Torn (Texture2D textur,Texture2D textur2, Texture2D textur3, Texture2D kultextur,Vector2 position): base (textur, position)
         {
             this.kulTextur = kultextur;
+            this.textur2 = textur2;
+            this.textur3 = textur3;
         }
         public bool ÄrInomRäckhåll(Vector2 position)
         {

@@ -36,7 +36,7 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = drawing.Width * 32;
 
-            graphics.PreferredBackBufferHeight = 32 + drawing.Height * 32;
+            graphics.PreferredBackBufferHeight = 50 + drawing.Height * 32;
             graphics.ApplyChanges();
             IsMouseVisible = true;
         }

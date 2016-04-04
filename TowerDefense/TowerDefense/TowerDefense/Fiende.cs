@@ -12,7 +12,7 @@ namespace TowerDefense
         protected float hälsa;
         protected bool vidliv = true;
         protected float starthälsa;
-        protected float fart = 0.5f;
+        protected float fart = 0.7f;
         protected int belöning;
         private Queue<Vector2> vägvisare = new Queue<Vector2>();
 
@@ -33,7 +33,7 @@ namespace TowerDefense
         {
             get { return Vector2.Distance(position, vägvisare.Peek()); }
         }
-        public Fiende(Texture2D textur, Vector2 position, float hälsa,float fart,int belöning) : base (textur,textur, position)
+        public Fiende(Texture2D textur, Vector2 position, float hälsa,float fart,int belöning) : base (textur, position)
         {
             this.hälsa = hälsa;
             this.fart = fart;
